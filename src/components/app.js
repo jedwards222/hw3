@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TextBar from './text_bar';
 import Immutable from 'immutable';
 import Note from './note.js';
+import * as firebase from '../firebase.js';
 
 // import Welcome from './welcome';
 
@@ -13,7 +14,6 @@ class App extends Component {
     // init component state here
     this.state = {
       notes: Immutable.Map(),
-      selectedNote: null,
       currentid: 0,
     };
 
@@ -21,6 +21,9 @@ class App extends Component {
     this.updateNote = this.updateNote.bind(this);
     this.deleteNote = this.deleteNote.bind(this);
     // this.createNote = this.createNote.bind(this);
+    firebase.onNotesChanged((notes) => {
+      this.setState({ notes: Immutable.Map(notes) });
+    });
   }
 
   getNotes() {
@@ -37,31 +40,35 @@ class App extends Component {
   }
 
   createNote(title) {
-    const newid = this.state.currentid + 1;
-    // Create a note with the current ID and given title
-    this.setState({
-      currentid: newid,
-      notes: this.state.notes.set(newid, {
-        title,
-        text: 'default text',
-        x: 0,
-        y: 0,
-        zIndex: 0,
-      }),
+    // firebase.createNote(title);
+    // const newid = this.state.currentid + 1;
+    // // Create a note with the current ID and given title
+    // this.setState
+    firebase.createNote({
+      // currentid: newid,
+      // notes: this.state.notes.set(newid, {
+      title,
+      text: 'default text',
+      x: 0,
+      y: 0,
+      zIndex: 0,
+      // }),
     });
-    return;
+    // return;
   }
 
   updateNote(id, fields) {
-    this.setState({
-      notes: this.state.notes.update(id, (note) => { return Object.assign({}, note, fields); }),
-    });
+    firebase.updateNote(id, fields);
+    // this.setState({
+    //   notes: this.state.notes.update(id, (note) => { return Object.assign({}, note, fields); }),
+    // });
   }
 
   deleteNote(id) {
-    this.setState({
-      notes: this.state.notes.delete(id),
-    });
+    firebase.deleteNote(id);
+    // this.setState({
+    //   notes: this.state.notes.delete(id),
+    // });
   }
 
   render() {
