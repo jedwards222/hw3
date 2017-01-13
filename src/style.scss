@@ -1,7 +1,7 @@
 body {
   font-family: "Roboto", sans-serif;
   color: rgb(10%, 10%, 10%);
-  background: lighten(powderblue, 5%);
+  background: rgb(76, 154, 235);
   margin: 50px;
 }
 
@@ -36,17 +36,26 @@ input {
   height: 350px;
   width: 280px;
   padding: 5px;
-  background-color: ivory;
+  background-color: rgb(255, 221, 74);
   border-radius: 8px;
   button {
-    color: sienna;
+    color: navy;
   }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .title {
+  font-size: 16pt;
+  font-style: italic;
   font-weight: bold;
-  font-style: oblique;
   margin-right: 10px;
+  text-align: center;
+}
+
+.buttons {
+
 }
 
 .textbox {

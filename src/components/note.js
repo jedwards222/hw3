@@ -46,11 +46,13 @@ class Note extends Component {
           onDrag={this.onDrag}
         >
           <div className="note" >
-            <span className="title"> {this.props.note.title} </span>
-            <button onClick={this.onDeletion}> Delete </button>
-            <button onClick={this.onEditing}> Edit </button>
-            <button className="note-mover"> Move </button>
+            <div className="title"> {this.props.note.title} </div>
             <div className="noteBody" dangerouslySetInnerHTML={{ __html: marked(this.props.note.text || '') }} />
+            <div className="buttons">
+              <button onClick={this.onDeletion}> Delete </button>
+              <button onClick={this.onEditing}> Edit </button>
+              <button className="note-mover"> Move </button>
+            </div>
           </div>
         </Draggable>
       );
@@ -64,11 +66,13 @@ class Note extends Component {
           onDrag={this.onDrag}
         >
           <div className="note">
-            <span className="title"> {this.props.note.title} </span>
-            <button onClick={this.onDeletion}> Delete </button>
-            <button onClick={this.onEditing}> Done </button>
-            <button className="note-mover"> Move </button>
+            <div className="title"> {this.props.note.title} </div>
             <Textarea className="textbox" onChange={this.onInputChange} value={this.props.note.text} />
+            <div className="buttons">
+              <button onClick={this.onDeletion}> Delete </button>
+              <button onClick={this.onEditing}> Done </button>
+              <button className="note-mover"> Move </button>
+            </div>
           </div>
         </Draggable>
       );
