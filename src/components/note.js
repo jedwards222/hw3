@@ -40,7 +40,7 @@ class Note extends Component {
       return (
         <Draggable
           handle=".note-mover"
-          grid={[25, 25]}
+          grid={[5, 5]}
           defaultPosition={{ x: this.props.note.x, y: this.props.note.y }}
           position={{ x: this.props.note.x, y: this.props.note.y }}
           onDrag={this.onDrag}
@@ -60,7 +60,7 @@ class Note extends Component {
       return (
         <Draggable
           handle=".note-mover"
-          grid={[25, 25]}
+          grid={[5, 5]}
           defaultPosition={{ x: this.props.note.x, y: this.props.note.y }}
           position={{ x: this.props.note.x, y: this.props.note.y }}
           onDrag={this.onDrag}
