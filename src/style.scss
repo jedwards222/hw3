@@ -18,8 +18,27 @@ body {
 button {
   height: 25px;
   margin: 5px;
+  padding: 0 7px;
   font-size: 1em;
   color: navy;
+  border-radius: 4px;
+  border: solid 1px rgb(170, 170, 170);
+  background-color: rgb(180, 180, 180);
+  transition-duration: .5s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(160, 160, 160);
+    border-color: rgb(150, 150, 150);
+  }
+  &:focus {
+    outline: 0px;
+    border-color: rgb(120, 120, 120);
+  }
+}
+
+.noteMover {
+  cursor: move;
 }
 
 input {
@@ -55,7 +74,8 @@ input {
 }
 
 .buttons {
-
+  display: flex;
+  justify-content: space-around;
 }
 
 .textbox {

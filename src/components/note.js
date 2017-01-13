@@ -39,7 +39,7 @@ class Note extends Component {
     if (!this.state.editing) {
       return (
         <Draggable
-          handle=".note-mover"
+          handle=".noteMover"
           grid={[5, 5]}
           defaultPosition={{ x: this.props.note.x, y: this.props.note.y }}
           position={{ x: this.props.note.x, y: this.props.note.y }}
@@ -51,7 +51,7 @@ class Note extends Component {
             <div className="buttons">
               <button onClick={this.onDeletion}> Delete </button>
               <button onClick={this.onEditing}> Edit </button>
-              <button className="note-mover"> Move </button>
+              <button className="noteMover"> Move </button>
             </div>
           </div>
         </Draggable>
@@ -59,7 +59,7 @@ class Note extends Component {
     } else {
       return (
         <Draggable
-          handle=".note-mover"
+          handle=".noteMover"
           grid={[5, 5]}
           defaultPosition={{ x: this.props.note.x, y: this.props.note.y }}
           position={{ x: this.props.note.x, y: this.props.note.y }}
@@ -71,7 +71,7 @@ class Note extends Component {
             <div className="buttons">
               <button onClick={this.onDeletion}> Delete </button>
               <button onClick={this.onEditing}> Done </button>
-              <button className="note-mover"> Move </button>
+              <button className="noteMover"> Move </button>
             </div>
           </div>
         </Draggable>
