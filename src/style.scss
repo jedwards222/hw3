@@ -5,6 +5,7 @@ body {
   margin: 50px;
 }
 
+// Unsure what this text_ba is... TODO check if unnecessary
 #text_ba {
   margin-bottom: 20px;
 
@@ -15,20 +16,32 @@ body {
   }
 }
 
+#titleBox {
+  border-radius: 4px;
+  border: solid 1px rgb(120,120,120);
+  padding: 4px;
+  color: black;
+  transition-duration: 1s;
+
+  &:focus {
+    outline: 0px;
+    border-color: black;
+  }
+}
+
 button {
-  height: 25px;
   margin: 5px;
-  padding: 0 7px;
+  padding: 4px 7px;
   font-size: 1em;
   color: navy;
   border-radius: 4px;
   border: solid 1px rgb(170, 170, 170);
-  background-color: rgb(180, 180, 180);
+  background-color: rgb(200, 200, 180);
   transition-duration: .5s;
   cursor: pointer;
 
   &:hover {
-    background-color: rgb(160, 160, 160);
+    background-color: rgb(180, 180, 180);
     border-color: rgb(150, 150, 150);
   }
   &:focus {
@@ -37,7 +50,7 @@ button {
   }
 }
 
-.noteMover {
+.noteMover:active {
   cursor: move;
 }
 

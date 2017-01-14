@@ -24,7 +24,7 @@ class TextBar extends Component {
   render() {
     return (
       <div>
-        <input onChange={this.onInputChange} value={this.state.textterm} />
+        <input id="titleBox" onChange={this.onInputChange} value={this.state.textterm} placeholder="Note Title" />
         <button onClick={this.onCreation} >
           Create New Note
         </button>
